@@ -24,6 +24,10 @@ class Deck:
 
         return dealt_cards
 
+    def draw_card(self):
+        """Draws the top card from this deck, returns a single card while removing one from the deck"""
+        return self.card_deck.pop(0)
+
     def __str__(self):
         """Returns the card deck"""
         return str(self.card_deck)
