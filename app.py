@@ -2,6 +2,7 @@
 from cards.deck import Deck
 from cards.hand import Hand
 
+
 def main():
     """Entry point for the application"""
     print('Hello world')
@@ -20,9 +21,8 @@ def main():
         while not player.check_if_in_hand(player_card_selection):
             print(f'{player_card_selection} not in hand.')
             player_card_selection = input(f'Please choose a card from your hand you have the following: {player}')
-        
-        print('Yes')
 
+        print('Yes')
 
     print(game_deck)
     print(computer_player)
