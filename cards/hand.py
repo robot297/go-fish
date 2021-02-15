@@ -28,6 +28,7 @@ class Hand:
         return to_hand
 
     def book_check(self, picked_card):
+        """Check if a book can be made and if so, creates a book"""
         picked_card = picked_card.upper()
         if self.cards.count(picked_card) == 4:
             self.books.append(picked_card)
