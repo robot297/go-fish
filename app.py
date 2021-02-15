@@ -31,9 +31,12 @@ def main():
             if computer_player.check_if_in_hand(player_card_selection.upper()):
                 print(f'Computer has those cards!')
                 human_player.cards = computer_player.draw_card(player_card_selection, human_player.cards)
+                human_player.book_check(player_card_selection)
             else:
                 print('Go fish!')
-                human_player.cards.append(game_deck.draw_card())
+                drawn_card = game_deck.draw_card()
+                human_player.cards.append(drawn_card)
+                human_player.book_check(drawn_card)
                 players_turn = False
 
         while not players_turn:
@@ -41,8 +44,11 @@ def main():
             if human_player.check_if_in_hand(computer_card_selection):
                 print(f'Computer guessed {computer_card_selection} and got it right!')
                 computer_player.cards = human_player.draw_card(computer_card_selection, computer_player.cards)
+                computer_player.book_check(computer_card_selection)
             else:
-                computer_player.cards.append(game_deck.draw_card())
+                drawn_card = game_deck.draw_card()
+                computer_player.cards.append(drawn_card)
+                computer_player.book_check(drawn_card)
                 print(f'Computer guessed {computer_card_selection} and got it wrong!\n It is now your turn!')
                 players_turn = True
 

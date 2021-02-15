@@ -7,6 +7,7 @@ class Hand:
     def __init__(self):
         """Constructor for player hands"""
         self.cards = []
+        self.books = []
 
     def check_if_in_hand(self, card):
         """Returns True if card is in hand, False if not"""
@@ -25,6 +26,15 @@ class Hand:
             x = x + 1
         print(f'{x} card(s) were drawn.')
         return to_hand
+
+    def book_check(self, picked_card):
+        picked_card = picked_card.upper()
+        if self.cards.count(picked_card) == 4:
+            self.books.append(picked_card)
+
+            for x in range(4):
+                self.cards.remove(picked_card)
+            print(f'A book made of {picked_card}\'s has been made')
 
     def __str__(self):
         """Returns the players cards"""
