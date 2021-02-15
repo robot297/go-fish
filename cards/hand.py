@@ -18,6 +18,7 @@ class Hand:
     def draw_card(self, card_selected, to_hand):
         """Draws card from one hand and places it into another."""
         x = 0
+        card_selected = card_selected.upper()
         while card_selected in self.cards:
             to_hand.append(card_selected)
             self.cards.remove(card_selected)
