@@ -18,13 +18,13 @@ class Hand:
 
     def draw_card(self, card_selected, to_hand):
         """Draws card from one hand and places it into another."""
-        x = 0
+        count = 0
         card_selected = card_selected.upper()
         while card_selected in self.cards:
             to_hand.append(card_selected)
             self.cards.remove(card_selected)
-            x = x + 1
-        print(f'{x} card(s) were drawn.')
+            count = count + 1
+        print(f'{count} card(s) were drawn.')
         return to_hand
 
     def book_check(self, picked_card):
