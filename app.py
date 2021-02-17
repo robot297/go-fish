@@ -6,7 +6,7 @@ import random
 
 def main():
     """Entry point for the application"""
-    print('Hello world')
+    print('Hello and let\'s play \'Go fish\'!')
     game_deck = Deck()
     human_player = Hand()
     computer_player = Hand()
